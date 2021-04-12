@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+.container {
+  width: 80%;
+  margin: auto;
+  border: 1px solid #8080803d;
+
+}
+.header {
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  height: 50px;
+  padding: 0 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header .logo {
+  display: flex;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.uber-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  margin-right: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  margin-bottom: 65px;
+  position: relative;
+}
+
+.background-img {
+  width: 90%;
+  height: 50%;
+}
+
+footer {
+  height: 50px;
+  border: 1px solid #8080803d;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  
+}
+
+.social-icon img{
+  width: 25px;
+  height: 25px;
+}
+
+.wrapper  {
+  height: 30%;
+  width: 40%;
+  position: absolute;
+  top: 10%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+}
+
+.form-backgronund {
+  background-color: #f7f5f1e6;
+  height: 75%;
+  padding: 50px;
+}
+
+.form-submit-code {
+  height: 100%;
+  justify-content: space-between;
   display: flex;
   flex-direction: column;
+}
+
+.title-header .text-color{
+  color: royalblue;
+}
+
+.number-list {
+  display: flex;
+  justify-content: space-around;
+}
+
+.number-list .item {
+  background-color: white;
+  padding: 10px 25px;
+  border: none;
+  border-width: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.radius-button {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  border-width: 1px;
+  border-color: 'gray';
+}
+
+.action-form {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+.request-link {
+  text-decoration: none;
+  color: royalblue;
+}
+
+.footer-text {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
+  height: 100%;
+  line-height: 0.1;
 }
