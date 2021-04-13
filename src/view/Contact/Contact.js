@@ -5,11 +5,20 @@ import Images from '../../themes/Images';
 import './Contact.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import CustomeSelect from '../../components/CustomSelect';
 
 import {
     validationRules,
     validateValuesByRule
   } from '../../utils/validation';
+
+
+const options = [
+    { value: '', label: 'Select a value' },
+    { value: 'Developer', label: 'Developer' },
+    { value: 'Rider', label: 'Rider'},
+    { value: 'Tester', label: 'Tester'},
+]
 
 const Contact = () => {
     const formik = useFormik({
@@ -31,7 +40,7 @@ const Contact = () => {
             alert(JSON.stringify(values, null, 2));
           }, 400);
         }
-      });
+    });
 
 return (
 <div className="container">
@@ -78,13 +87,13 @@ return (
                         'has-error': formik.touched.mess && formik.errors.mess
                         })}>
                         <textarea 
-                        rows={5}
-                        style={{height: 80, width: 220}}
-                        type="text" 
-                        id="mess" 
-                        onBlur={formik.handleBlur}
-                        onChange={formik.handleChange}
-                        placeholder="Enter your Message"
+                            rows={5}
+                            style={{height: 80, width: 220}}
+                            type="text" 
+                            id="mess" 
+                            onBlur={formik.handleBlur}
+                            onChange={formik.handleChange}
+                            placeholder="Enter your Message"
                         />
                         {formik.touched.mess && formik.errors.mess && (
                             <span className="help-block">
@@ -94,7 +103,7 @@ return (
                         </div>
                     </div>
                 </div>
-                <div className="input-item"s>
+                <div className="input-item">
                     <div className="lable-title">
                         <label>Select:</label>
                     </div>
@@ -102,14 +111,12 @@ return (
                         'form-group': true,
                         'has-error': formik.touched.selected && formik.errors.selected
                         })}>
-                        <select className="input-text" 
-                            onBlur={formik.handleBlur}
-                            onChange={formik.handleChange}>
-                            <option value="">Select a value</option>
-                            <option value="Rider">Rider</option>
-                            <option value="Developer">Developer</option>
-                            <option value="Tester">Tester</option>
-                        </select>
+                        <CustomeSelect
+                            options={options}
+                            value={formik.values.selected}
+                            className={'input-text'}
+                            onChange={value=>formik.setFieldValue('selected', value.value)}
+                        />
                         {formik.touched.selected && formik.errors.selected && (
                             <span className="help-block">
                             {formik.errors.selected}
@@ -117,15 +124,15 @@ return (
                         )}
                     </div>
                 </div>
-            <div className="action-form">
-                <button 
-                    type="submit"
-                    disabled={!formik.isValid || formik.isSubmitting}
-                    className="radius-button"
-                    >
-                    <img src={Images.arrow} alt="arrow-img" />
-                </button>
-            </div>
+                <div className="action-form">
+                    <button 
+                        type="submit"
+                        disabled={!formik.isValid || formik.isSubmitting}
+                        className="radius-button"
+                        >
+                        <img src={Images.arrow} alt="arrow-img" />
+                    </button>
+                </div>
             </form>
         </div>
     </div>

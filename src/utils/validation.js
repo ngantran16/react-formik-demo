@@ -13,7 +13,7 @@ required: [
   selected: [
     {
       validator: validateSelected,
-      message: 'Select a value different from the default value'
+      message: 'Select a value'
     }
   ]
 }
