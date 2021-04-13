@@ -7,17 +7,17 @@
 }
   
 .social-icon img {
-padding: 5px;
+    padding: 5px;
 }
 
 .social-icon {
-padding: 20px;
+    padding: 20px;
 }
 
 .footer {
-height: 50px;
-border: 1px solid #8080803d;
-justify-content: space-between;
-align-items: center;
-display: flex;
+    height: 50px;
+    border: 1px solid #8080803d;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
 }

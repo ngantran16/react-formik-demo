@@ -12,7 +12,6 @@ import {
     validateValuesByRule
   } from '../../utils/validation';
 
-
 const options = [
     { value: '', label: 'Select a value' },
     { value: 'Developer', label: 'Developer' },
@@ -38,7 +37,7 @@ const Contact = () => {
           setTimeout(() => {
             actions.setSubmitting(false);
             alert(JSON.stringify(values, null, 2));
-          }, 400);
+          }, 2000);
         }
     });
 
