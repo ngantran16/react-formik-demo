@@ -45,10 +45,14 @@ main {
   padding: 10px;
 }
 
+.lable-title {
+  font-size: 12px;
+}
+
 .form-backgronund {
   background-color: #F5F5F5;
   height: 75%;
-  width: 100%;
+  /* width: 100%; */
   padding: 20px;
 }
 
@@ -76,7 +80,7 @@ main {
 }
 
 .input-text {
-  width: 200px;
+  width: 220px;
   height: 30px;
 }
 

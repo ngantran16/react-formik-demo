@@ -1,5 +1,7 @@
 export const validateRequired = (value) => !!value;
 
+export const validateSelected = (value) => value !== '';
+
 export const validationRules = {
 required: [
     {
@@ -7,6 +9,13 @@ required: [
       message: 'This field is required'
     }
   ],
+
+  selected: [
+    {
+      validator: validateSelected,
+      message: 'Select a value different from the default value'
+    }
+  ]
 }
 
 export const validateValuesByRule = (rules) => (values) => {

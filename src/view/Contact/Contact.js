@@ -16,12 +16,13 @@ const Contact = () => {
         initialValues: {
           name: '',
           selected: '',
-          messages: '',
+          mess: '',
         },
         validate: (values) => {
           return validateValuesByRule({
             name: validationRules.required,
-            message: validationRules.required,
+            selected: validationRules.selected,
+            mess: validationRules.required,
           })(values);
         },
         onSubmit: (values, actions) => {
@@ -69,26 +70,25 @@ return (
                     </div>
 
                     <div className="input-item">
-                    <div className="lable-title">
-                        <label>Message:</label>
-                    </div>
+                        <div className="lable-title">
+                            <label>Message:</label>
+                        </div>
                         <div className={classNames({
                         'form-group': true,
-                        'has-error': formik.touched.messages && formik.errors.messages
+                        'has-error': formik.touched.mess && formik.errors.mess
                         })}>
                         <textarea 
                         rows={5}
                         style={{height: 80, width: 220}}
                         type="text" 
-                        id="messages" 
+                        id="mess" 
                         onBlur={formik.handleBlur}
                         onChange={formik.handleChange}
                         placeholder="Enter your Message"
-                        >
-                        </textarea>
-                        {formik.touched.messages && formik.errors.messages && (
+                        />
+                        {formik.touched.mess && formik.errors.mess && (
                             <span className="help-block">
-                            {formik.errors.messages}
+                            {formik.errors.mess}
                             </span>
                         )}
                         </div>
@@ -98,12 +98,24 @@ return (
                     <div className="lable-title">
                         <label>Select:</label>
                     </div>
-                    <select className="input-text">
-                        <option selected value="Rider">Rider</option>
-                        <option value="Grap">Grap</option>
-                        <option value="Developer">Developer</option>
-                        <option value="Tester">Tester</option>
-                    </select>
+                    <div className={classNames({
+                        'form-group': true,
+                        'has-error': formik.touched.selected && formik.errors.selected
+                        })}>
+                        <select className="input-text" 
+                            onBlur={formik.handleBlur}
+                            onChange={formik.handleChange}>
+                            <option value="">Select a value</option>
+                            <option value="Rider">Rider</option>
+                            <option value="Developer">Developer</option>
+                            <option value="Tester">Tester</option>
+                        </select>
+                        {formik.touched.selected && formik.errors.selected && (
+                            <span className="help-block">
+                            {formik.errors.selected}
+                            </span>
+                        )}
+                    </div>
                 </div>
             <div className="action-form">
                 <button 
